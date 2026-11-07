@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VU23489 Audio</title>
+<style>
+  :root { --bg:#f7f7f4; --card:#fff; --ink:#1f2328; --muted:#5b636b; --line:#e3e3dc; --accent:#1d6f5f; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#1f2226; --ink:#e8e8e3; --muted:#a3a9ae; --line:#30343a; --accent:#5fc2a8; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:24px 16px 48px; }
+  a { color:var(--accent); }
+  h1 { font-size:1.6rem; margin:.2rem 0 .2rem; }
+  .sub { color:var(--muted); margin:0 0 1.5rem; }
+  ol { list-style:none; padding:0; margin:0; counter-reset:t; }
+  li { counter-increment:t; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:12px; }
+  .row { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
+  .name::before { content:counter(t) ". "; color:var(--muted); }
+  .name { font-weight:600; }
+  .len { color:var(--muted); font-size:.9rem; white-space:nowrap; }
+  audio { width:100%; margin-top:8px; }
+  .dl { font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <p><a href="../">← All units</a></p>
+  <h1>VU23489 – Workbook audio</h1>
+  <p class="sub">Press play to listen. No login needed.</p>
+  <ol>
+    <li><div class="row"><span class="name">The alphabet</span><span class="len">5:40</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudAlphbt.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudAlphbt.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Letter names M–R</span><span class="len">0:47</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudLttrNmeMR.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudLttrNmeMR.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Letter names S–Z</span><span class="len">0:42</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudLttrNmeSZ.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudLttrNmeSZ.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Mixed alphabet</span><span class="len">2:05</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudMixAlphbt.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudMixAlphbt.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Vowel sounds</span><span class="len">0:52</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudVwlSnd.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudVwlSnd.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Vowel sounds in words</span><span class="len">1:38</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudVwlSndWrd.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudVwlSndWrd.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Consonants</span><span class="len">3:26</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudCnsnants.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudCnsnants.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Common sound combinations – activity</span><span class="len">1:22</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudCmnSndCmbosActvty.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudCmnSndCmbosActvty.mp3" download>Download</a></li>
+    <li><div class="row"><span class="name">Spoken and written sounds</span><span class="len">5:24</span></div>
+      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudSpknWrttnSnd.mp3"></audio>
+      <a class="dl" href="audio/VU23489_TL_SW_Appx_AudSpknWrttnSnd.mp3" download>Download</a></li>
+  </ol>
+</main>
+</body>
+</html>
