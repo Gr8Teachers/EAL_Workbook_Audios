@@ -6,6 +6,13 @@
     var n = parseInt(ol.getAttribute('start') || '1', 10);
     $$(':scope > li', ol).forEach(function (li) { li.setAttribute('data-n', n++); });
   });
+  var _cv = document.createElement('canvas').getContext('2d');
+  function fitBlank(b) {
+    var cs = getComputedStyle(b); _cv.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    var w = _cv.measureText(b.value || '').width + 16;
+    b.style.width = Math.max(parseFloat(cs.fontSize) * 7, Math.ceil(w)) + 'px';
+  }
+  window.fitBlank = fitBlank;
   if (window.top !== window.self) { var bk = $('.backlink'); if (bk) bk.style.display = 'none'; }
 
   // Audio players + speed
@@ -29,7 +36,12 @@
         $$('.opt', g).forEach(function (x) { x.classList.remove('right', 'wrong'); });
         if (single) $$('.opt', g).forEach(function (x) { if (x !== o) { x.classList.remove('on'); x.setAttribute('aria-pressed', 'false'); } });
         o.classList.toggle('on'); o.setAttribute('aria-pressed', o.classList.contains('on'));
-        if (blank && single) blank.value = o.classList.contains('on') ? $('.tx', o).textContent.trim() : '';
+        if (blank && single) {
+          var txt = o.classList.contains('on') ? $('.tx', o).textContent.trim() : '';
+          var after = blank.nextSibling ? (blank.nextSibling.textContent || '') : '';
+          if (/^\s*[.!?,]/.test(after)) txt = txt.replace(/[.!?,]+$/, '');
+          blank.value = txt; fitBlank(blank);
+        }
       };
     });
   });
@@ -231,6 +243,7 @@
       });
     });
   });
+  $$('input.blank').forEach(function (b) { b.addEventListener('input', function () { fitBlank(b); }); });
   $$('.openans textarea').forEach(function (t) {
     t.addEventListener('input', function () { t.classList.remove('right', 'wrong'); t.style.height = 'auto'; t.style.height = t.scrollHeight + 'px'; });
   });
@@ -338,7 +351,7 @@
     $$('.wb td.fill').forEach(function (c) { c.classList.remove('right', 'wrong'); });
     $$('.wb .typed').forEach(function (e) { e.textContent = ''; }); $$('.pick').forEach(function (p) { p.value = ''; });
     $$('.openans textarea').forEach(function (t) { t.value = ''; t.classList.remove('right', 'wrong'); });
-    $$('.blank').forEach(function (b) { b.value = ''; });
+    $$('.blank').forEach(function (b) { b.value = ''; b.style.width = ''; });
     root.classList.remove('reveal'); if (show) show.textContent = 'Show answers';
     if (score) score.classList.add('hidden');
   };

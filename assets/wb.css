@@ -124,7 +124,7 @@ footer { overflow-wrap:anywhere; margin-top:28px; color:var(--muted); font-size:
 .openans textarea { width:100%; font:inherit; padding:6px 10px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); resize:vertical; min-height:2.3em; }
 .openans textarea.right { border-color:var(--good); background:var(--good-soft); }
 .openans textarea.wrong { border-color:var(--bad); background:var(--bad-soft); }
-.blank { width:7em; font:inherit; font-weight:600; color:var(--accent); text-align:center; border:0; border-bottom:2px solid var(--ink); background:transparent; padding:0 2px; margin:0 2px; }
+.blank { width:7em; max-width:100%; font:inherit; font-weight:600; color:var(--accent); text-align:center; border:0; border-bottom:2px solid var(--ink); background:transparent; padding:0 2px; margin:0 2px; }
 .blank:focus { outline:none; border-bottom-color:var(--accent); background:var(--accent-soft); }
 .player { margin-bottom:10px; }
 .audname { margin:0 0 .3rem; }
