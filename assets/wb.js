@@ -172,7 +172,20 @@
       R.appendChild(o); opts[ol] = o;
       ac.removeAttribute('data-answer'); ac.classList.remove('fill');
     });
-    box.appendChild(L); box.appendChild(svg); box.appendChild(R);
+    // lay items and options out as table rows: row i = item i | lines | option i
+    var lhead = $('.mh', L), rhead = $('.mh', R);
+    if (lhead) { lhead.style.gridColumn = '1'; lhead.style.gridRow = '1'; box.appendChild(lhead); }
+    if (rhead) { rhead.style.gridColumn = '3'; rhead.style.gridRow = '1'; box.appendChild(rhead); }
+    var off = (lhead || rhead) ? 2 : 1, ritems = $$('.mopt', R);
+    items.forEach(function (it, i) { it.style.gridColumn = '1'; it.style.gridRow = String(i + off); box.appendChild(it); });
+    ritems.forEach(function (o, i) { o.style.gridColumn = '3'; o.style.gridRow = String(i + off); box.appendChild(o); });
+    svg.style.gridColumn = '1 / 4'; svg.style.gridRow = '1 / ' + (Math.max(items.length, ritems.length) + off);
+    box.appendChild(svg);
+    // balance column widths by how much text each side has
+    function avg(list) { return list.reduce(function (a, x) { return a + x.textContent.trim().length; }, 0) / Math.max(1, list.length); }
+    var la = avg(items) + (items.some(function (x) { return x.querySelector('img'); }) ? 25 : 0), ra = avg(ritems);
+    var lf = Math.min(Math.max(la / (la + ra), 0.28), 0.6);
+    box.style.gridTemplateColumns = 'minmax(0,' + lf.toFixed(2) + 'fr) 56px minmax(0,' + (1 - lf).toFixed(2) + 'fr)';
     var tip = document.createElement('div'); tip.className = 'hint'; tip.textContent = 'Draw a line from each item to its match: drag from a dot, or tap an item and then its match. Tap a line’s item again to remove it.';
     wrap.parentNode.insertBefore(tip, wrap); wrap.parentNode.insertBefore(box, wrap); wrap.style.display = 'none';
     box._links = {};   // item index -> letter

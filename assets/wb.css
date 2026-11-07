@@ -191,3 +191,10 @@ table.ordering tr.wrong td.handle { background:var(--bad-soft); } table.ordering
 .wb .mcq { padding-left:0; }
 .wb h3, .wb h4 { font-size:1.05rem; margin:1.2rem 0 .3rem; }
 .matcher .right { justify-content:space-around; }
+
+/* matching laid out like a table */
+.matcher { row-gap:8px; align-items:stretch; }
+.matcher .mh { align-self:end; padding:0 2px 2px; }
+.matcher .mitem, .matcher .mopt { height:100%; margin:0; border-radius:8px; }
+.matcher .mopt { line-height:1.4; }
+@media (max-width: 560px) { .matcher { grid-template-columns:minmax(0,.4fr) 34px minmax(0,.6fr) !important; } }
