@@ -3,64 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VU23489 Audio</title>
+<title>VU23489 Activities</title>
 <style>
-  :root { --bg:#f7f7f4; --card:#fff; --ink:#1f2328; --muted:#5b636b; --line:#e3e3dc; --accent:#1d6f5f; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#1f2226; --ink:#e8e8e3; --muted:#a3a9ae; --line:#30343a; --accent:#5fc2a8; } }
+  :root { --bg:#f7f7f4; --card:#fff; --ink:#1f2328; --muted:#5b636b; --line:#e3e3dc; --accent:#1d6f5f; --accent-soft:#dff1ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#1f2226; --ink:#e8e8e3; --muted:#a3a9ae; --line:#30343a; --accent:#5fc2a8; --accent-soft:#1d3a33; } }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:24px 16px 48px; }
-  a { color:var(--accent); }
-  h1 { font-size:1.6rem; margin:.2rem 0 .2rem; }
-  .sub { color:var(--muted); margin:0 0 1.5rem; }
-  ol { list-style:none; padding:0; margin:0; counter-reset:t; }
-  li { counter-increment:t; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:12px; }
-  .row { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
-  .name { font-weight:600; }
-  .len { color:var(--muted); font-size:.9rem; white-space:nowrap; }
-  li { padding:0; }
-  .tag { color:var(--muted); font-size:.9rem; margin-top:2px; }
-  a.act { display:block; padding:14px 16px; color:var(--ink); text-decoration:none; border-radius:12px; }
-  a.act:hover { background:var(--bg); }
-  a.act .name { color:var(--accent); }
-  a.act .name::after { content:" →"; }
+  html, body { height:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; display:flex; flex-direction:column; }
+  header { display:flex; align-items:center; gap:12px; padding:10px 16px; border-bottom:1px solid var(--line); background:var(--card); }
+  header a { color:var(--accent); text-decoration:none; font-size:.9rem; }
+  header h1 { font-size:1.1rem; margin:0; }
+  .wrap { flex:1; display:flex; min-height:0; }
+  nav { width:300px; flex-shrink:0; overflow-y:auto; border-right:1px solid var(--line); background:var(--card); }
+  nav ul { list-style:none; margin:0; padding:8px; }
+  nav button { width:100%; display:flex; gap:10px; align-items:flex-start; text-align:left; font:inherit; color:var(--ink); background:none; border:0; border-radius:10px; padding:9px 10px; cursor:pointer; }
+  nav button:hover { background:var(--bg); }
+  nav button.on { background:var(--accent-soft); }
+  nav .n { flex-shrink:0; min-width:30px; height:30px; border-radius:8px; background:var(--bg); border:1px solid var(--line); display:grid; place-items:center; font-weight:700; font-size:.9rem; }
+  nav button.on .n { background:var(--accent); border-color:var(--accent); color:#fff; }
+  nav .t { font-weight:600; }
+  nav small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+  .stage { flex:1; display:flex; flex-direction:column; min-width:0; }
+  .bar { display:flex; gap:8px; align-items:center; padding:8px 16px; border-bottom:1px solid var(--line); }
+  .bar select { display:none; flex:1; min-width:0; font:inherit; padding:8px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); }
+  .bar .spacer { flex:1; }
+  .bar button { font:inherit; padding:8px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+  .bar button:disabled { opacity:.4; cursor:default; }
+  iframe { flex:1; width:100%; border:0; background:var(--bg); }
+  @media (max-width: 760px) {
+    nav { display:none; }
+    .bar select { display:block; }
+    .bar .spacer, .bar .lbl { display:none; }
+  }
 </style>
 </head>
 <body>
-<main>
-  <p><a href="../">← Back to course</a></p>
-  <h1>VU23489 – Workbook audio and activities</h1>
-  <p class="sub">Click an activity to open it, then press play. No login needed.</p>
-  <ol>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudAlphbt.html"><div class="row"><span class="name">Activity 2: The names of letters</span><span class="len">5:40</span></div>
-      <div class="tag">Listen and repeat · Audio: Letters of the alphabet</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeAF.html"><div class="row"><span class="name">Activity 3: Letter names A to F</span><span class="len"></span></div>
-      <div class="tag">Listen and choose · Audio: Letter names A to F · <em>audio coming soon</em></div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeGL.html"><div class="row"><span class="name">Activity 5: Letter names G to L</span><span class="len"></span></div>
-      <div class="tag">Listen and choose · Audio: Letter names G to L · <em>audio coming soon</em></div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeMR.html"><div class="row"><span class="name">Activity 7: Letter names M to R</span><span class="len">0:47</span></div>
-      <div class="tag">Listen and choose · Audio: Letter names M to R</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeSZ.html"><div class="row"><span class="name">Activity 9: Letter names S to Z</span><span class="len">0:42</span></div>
-      <div class="tag">Listen and choose · Audio: Letter names S to Z</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmes.html"><div class="row"><span class="name">Activity 13: Say the names of the letters</span><span class="len"></span></div>
-      <div class="tag">Listen and repeat · Audio: Say the names of the letters · <em>audio coming soon</em></div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudMixAlphbt.html"><div class="row"><span class="name">Activity 14: Writing letters</span><span class="len">2:05</span></div>
-      <div class="tag">Listen and write · Audio: Mixed alphabet letters</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSnd.html"><div class="row"><span class="name">Activity 30: Repeat the sound</span><span class="len">0:52</span></div>
-      <div class="tag">Listen and repeat · Audio: Vowel sounds</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSndWrd.html"><div class="row"><span class="name">Activity 31: Sound out the word</span><span class="len">1:38</span></div>
-      <div class="tag">Listen and repeat · Audio: Vowel sounds in words</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCnsnants.html"><div class="row"><span class="name">Activity 34: Repeat the consonant sounds</span><span class="len">3:26</span></div>
-      <div class="tag">Listen and repeat · Audio: Consonant sounds</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudBlndSnd.html"><div class="row"><span class="name">Activity 35: Repeat the sound</span><span class="len"></span></div>
-      <div class="tag">Listen and repeat · Audio: Blended sounds · <em>audio coming soon</em></div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbos.html"><div class="row"><span class="name">Activity 36: Listen to sounds</span><span class="len"></span></div>
-      <div class="tag">Listen and repeat · Audio: Common sound combinations · <em>audio coming soon</em></div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbosActvty.html"><div class="row"><span class="name">Activity 37: Sound combinations</span><span class="len">1:22</span></div>
-      <div class="tag">Listen and choose · Audio: Common sound combinations activity</div></a></li>
-    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudSpknWrttnSnd.html"><div class="row"><span class="name">Activity 41: Spoken and written sounds</span><span class="len">5:24</span></div>
-      <div class="tag">Listen and repeat · Audio: Spoken and written sounds</div></a></li>
-  </ol>
-</main>
+<header><a href="../">← Course</a><h1>VU23489 activities</h1></header>
+<div class="wrap">
+  <nav aria-label="Activities">
+    <ul>
+      <li><button data-i="0"><span class="n">2</span><span class="t">The names of letters<small>Letters of the alphabet · 5:40</small></span></button></li>
+      <li><button data-i="1"><span class="n">3</span><span class="t">Letter names A to F<small>Letter names A to F · audio coming soon</small></span></button></li>
+      <li><button data-i="2"><span class="n">5</span><span class="t">Letter names G to L<small>Letter names G to L · audio coming soon</small></span></button></li>
+      <li><button data-i="3"><span class="n">7</span><span class="t">Letter names M to R<small>Letter names M to R · 0:47</small></span></button></li>
+      <li><button data-i="4"><span class="n">9</span><span class="t">Letter names S to Z<small>Letter names S to Z · 0:42</small></span></button></li>
+      <li><button data-i="5"><span class="n">13</span><span class="t">Say the names of the letters<small>Say the names of the letters · audio coming soon</small></span></button></li>
+      <li><button data-i="6"><span class="n">14</span><span class="t">Writing letters<small>Mixed alphabet letters · 2:05</small></span></button></li>
+      <li><button data-i="7"><span class="n">30</span><span class="t">Repeat the sound<small>Vowel sounds · 0:52</small></span></button></li>
+      <li><button data-i="8"><span class="n">31</span><span class="t">Sound out the word<small>Vowel sounds in words · 1:38</small></span></button></li>
+      <li><button data-i="9"><span class="n">34</span><span class="t">Repeat the consonant sounds<small>Consonant sounds · 3:26</small></span></button></li>
+      <li><button data-i="10"><span class="n">35</span><span class="t">Repeat the sound<small>Blended sounds · audio coming soon</small></span></button></li>
+      <li><button data-i="11"><span class="n">36</span><span class="t">Listen to sounds<small>Common sound combinations · audio coming soon</small></span></button></li>
+      <li><button data-i="12"><span class="n">37</span><span class="t">Sound combinations<small>Common sound combinations activity · 1:22</small></span></button></li>
+      <li><button data-i="13"><span class="n">41</span><span class="t">Spoken and written sounds<small>Spoken and written sounds · 5:24</small></span></button></li>
+    </ul>
+  </nav>
+  <section class="stage">
+    <div class="bar">
+      <select aria-label="Choose an activity">
+      <option value="0">Activity 2: The names of letters</option>
+      <option value="1">Activity 3: Letter names A to F</option>
+      <option value="2">Activity 5: Letter names G to L</option>
+      <option value="3">Activity 7: Letter names M to R</option>
+      <option value="4">Activity 9: Letter names S to Z</option>
+      <option value="5">Activity 13: Say the names of the letters</option>
+      <option value="6">Activity 14: Writing letters</option>
+      <option value="7">Activity 30: Repeat the sound</option>
+      <option value="8">Activity 31: Sound out the word</option>
+      <option value="9">Activity 34: Repeat the consonant sounds</option>
+      <option value="10">Activity 35: Repeat the sound</option>
+      <option value="11">Activity 36: Listen to sounds</option>
+      <option value="12">Activity 37: Sound combinations</option>
+      <option value="13">Activity 41: Spoken and written sounds</option>
+      </select>
+      <span class="spacer"></span>
+      <button id="prev" aria-label="Previous activity">←<span class="lbl"> Previous</span></button>
+      <button id="next" aria-label="Next activity"><span class="lbl">Next </span>→</button>
+    </div>
+    <iframe title="Activity" src="activities/VU23489_TL_SW_Appx_TrnScptAudAlphbt.html"></iframe>
+  </section>
+</div>
+<script>
+  var D = [{"n": 2, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudAlphbt.html"}, {"n": 3, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeAF.html"}, {"n": 5, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeGL.html"}, {"n": 7, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeMR.html"}, {"n": 9, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeSZ.html"}, {"n": 13, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmes.html"}, {"n": 14, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudMixAlphbt.html"}, {"n": 30, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudVwlSnd.html"}, {"n": 31, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudVwlSndWrd.html"}, {"n": 34, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudCnsnants.html"}, {"n": 35, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudBlndSnd.html"}, {"n": 36, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbos.html"}, {"n": 37, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbosActvty.html"}, {"n": 41, "page": "activities/VU23489_TL_SW_Appx_TrnScptAudSpknWrttnSnd.html"}];
+  var frame = document.querySelector('iframe'), sel = document.querySelector('select'),
+      btns = document.querySelectorAll('nav button'), prev = document.getElementById('prev'), next = document.getElementById('next'), cur = -1;
+  function show(i, push) {
+    if (i < 0 || i >= D.length) return;
+    if (i !== cur) frame.src = D[i].page;
+    cur = i;
+    btns.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    sel.value = String(i); prev.disabled = i === 0; next.disabled = i === D.length - 1;
+    if (push) history.replaceState(null, '', '#activity-' + D[i].n);
+    btns[i].scrollIntoView({ block: 'nearest' });
+  }
+  btns.forEach(function (b, k) { b.onclick = function () { show(k, true); }; });
+  sel.onchange = function () { show(+sel.value, true); };
+  prev.onclick = function () { show(cur - 1, true); };
+  next.onclick = function () { show(cur + 1, true); };
+  var m = location.hash.match(/activity-(\d+)/), start = 0;
+  if (m) D.forEach(function (d, k) { if (String(d.n) === m[1]) start = k; });
+  show(start, false);
+</script>
 </body>
 </html>

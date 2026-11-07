@@ -1,6 +1,7 @@
 (function () {
   var A = window.ACT;
   var root = document.getElementById('app');
+  if (window.top !== window.self) { var back = document.querySelector('main > p a[href="../"]'); if (back) back.parentNode.style.display = 'none'; }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
   // Audio player with speed control
