@@ -43,3 +43,4 @@ button.on { background:var(--accent); border-color:var(--accent); color:#fff; }
 details.transcript { margin-top:24px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:10px 14px; }
 details.transcript summary { cursor:pointer; font-weight:600; }
 footer { overflow-wrap:anywhere; margin-top:28px; color:var(--muted); font-size:.8rem; line-height:1.4; }
+.audname { color:var(--muted); margin:0 0 .4rem; font-size:.95rem; }
