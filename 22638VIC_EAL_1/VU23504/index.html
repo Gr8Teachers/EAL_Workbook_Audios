@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VU23504 Activities</title>
+<style>
+  :root { --bg:#f7f7f4; --card:#fff; --ink:#1f2328; --muted:#5b636b; --line:#e3e3dc; --accent:#1d6f5f; --accent-soft:#dff1ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#1f2226; --ink:#e8e8e3; --muted:#a3a9ae; --line:#30343a; --accent:#5fc2a8; --accent-soft:#1d3a33; } }
+  * { box-sizing:border-box; }
+  html, body { height:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; display:flex; flex-direction:column; }
+  header { display:flex; align-items:center; gap:12px; padding:10px 16px; border-bottom:1px solid var(--line); background:var(--card); }
+  header a { color:var(--accent); text-decoration:none; font-size:.9rem; }
+  header h1 { font-size:1.1rem; margin:0; }
+  .wrap { flex:1; display:flex; min-height:0; }
+  nav { width:300px; flex-shrink:0; overflow-y:auto; border-right:1px solid var(--line); background:var(--card); }
+  nav ul { list-style:none; margin:0; padding:8px; }
+  nav button { width:100%; display:flex; gap:10px; align-items:flex-start; text-align:left; font:inherit; color:var(--ink); background:none; border:0; border-radius:10px; padding:9px 10px; cursor:pointer; }
+  nav button:hover { background:var(--bg); }
+  nav button.on { background:var(--accent-soft); }
+  nav .n { flex-shrink:0; min-width:30px; height:30px; border-radius:8px; background:var(--bg); border:1px solid var(--line); display:grid; place-items:center; font-weight:700; font-size:.9rem; }
+  nav button.on .n { background:var(--accent); border-color:var(--accent); color:#fff; }
+  nav .t { font-weight:600; }
+  nav small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+  .stage { flex:1; display:flex; flex-direction:column; min-width:0; }
+  .bar { display:flex; gap:8px; align-items:center; padding:8px 16px; border-bottom:1px solid var(--line); }
+  .bar select { display:none; flex:1; min-width:0; font:inherit; padding:8px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); }
+  .bar .spacer { flex:1; }
+  .bar button { font:inherit; padding:8px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+  .bar button:disabled { opacity:.4; cursor:default; }
+  iframe { flex:1; width:100%; border:0; background:var(--bg); }
+  @media (max-width: 760px) {
+    nav { display:none; }
+    .bar select { display:block; }
+    .bar .spacer, .bar .lbl { display:none; }
+  }
+  header a { white-space:nowrap; }
+  @media (max-width: 760px) { header h1 { font-size:.95rem; } }
+</style>
+</head>
+<body>
+<header><a href="../">← Course</a><h1>VU23504 – Read and write short, simple informational texts</h1></header>
+<div class="wrap">
+  <nav aria-label="Activities">
+    <ul>
+      <li><button data-i="0"><span class="n">11</span><span class="t">Types of housing<small>Types of housing · 0:28</small></span></button></li>
+      <li><button data-i="1"><span class="n">12</span><span class="t">Looking for a flat<small>Looking for a flat · 1:52</small></span></button></li>
+    </ul>
+  </nav>
+  <section class="stage">
+    <div class="bar">
+      <select aria-label="Choose an activity">
+      <option value="0">Activity 11: Types of housing</option>
+      <option value="1">Activity 12: Looking for a flat</option>
+      </select>
+      <span class="spacer"></span>
+      <button id="prev" aria-label="Previous activity">←<span class="lbl"> Previous</span></button>
+      <button id="next" aria-label="Next activity"><span class="lbl">Next </span>→</button>
+    </div>
+    <iframe title="Activity" src="activities/activity-11.html"></iframe>
+  </section>
+</div>
+<script>
+  var D = [{"n": 11, "page": "activities/activity-11.html"}, {"n": 12, "page": "activities/activity-12.html"}];
+  var frame = document.querySelector('iframe'), sel = document.querySelector('select'),
+      btns = document.querySelectorAll('nav button'), prev = document.getElementById('prev'), next = document.getElementById('next'), cur = -1;
+  function show(i, push) {
+    if (i < 0 || i >= D.length) return;
+    if (i !== cur) frame.src = D[i].page;
+    cur = i;
+    btns.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    sel.value = String(i); prev.disabled = i === 0; next.disabled = i === D.length - 1;
+    if (push) history.replaceState(null, '', '#activity-' + D[i].n);
+    btns[i].scrollIntoView({ block: 'nearest' });
+  }
+  btns.forEach(function (b, k) { b.onclick = function () { show(k, true); }; });
+  sel.onchange = function () { show(+sel.value, true); };
+  prev.onclick = function () { show(cur - 1, true); };
+  next.onclick = function () { show(cur + 1, true); };
+  var m = location.hash.match(/activity-(\d+)/), start = 0;
+  if (m) D.forEach(function (d, k) { if (String(d.n) === m[1]) start = k; });
+  show(start, false);
+</script>
+</body>
+</html>
