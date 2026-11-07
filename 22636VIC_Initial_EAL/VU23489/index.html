@@ -18,76 +18,48 @@
   .row { display:flex; justify-content:space-between; gap:12px; align-items:baseline; }
   .name { font-weight:600; }
   .len { color:var(--muted); font-size:.9rem; white-space:nowrap; }
-  audio { width:100%; margin-top:8px; }
-  .dl { font-size:.9rem; }
-  .open { display:inline-block; margin-top:10px; padding:8px 14px; border-radius:10px; background:var(--accent); color:#fff; text-decoration:none; font-weight:600; }
-  .row .tag { color:var(--muted); font-size:.85rem; }
-  .noaudio { color:var(--muted); font-style:italic; font-size:.9rem; margin-top:6px; }
-  .dl { margin-left:12px; }
+  li { padding:0; }
+  .tag { color:var(--muted); font-size:.9rem; margin-top:2px; }
+  a.act { display:block; padding:14px 16px; color:var(--ink); text-decoration:none; border-radius:12px; }
+  a.act:hover { background:var(--bg); }
+  a.act .name { color:var(--accent); }
+  a.act .name::after { content:" →"; }
 </style>
 </head>
 <body>
 <main>
   <p><a href="../">← Back to course</a></p>
   <h1>VU23489 – Workbook audio and activities</h1>
-  <p class="sub">Press play to listen, or open the activity to practise. No login needed.</p>
+  <p class="sub">Click an activity to open it, then press play. No login needed.</p>
   <ol>
-    <li><div class="row"><span class="name">Activity 2: The names of letters</span><span class="len">5:40</span></div>
-      <div class="tag">Audio: Letters of the alphabet · Listen and repeat</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudAlphbt.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudAlphbt.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudAlphbt.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 3: Letter names A to F</span><span class="len"></span></div>
-      <div class="tag">Audio: Letter names A to F · Listen and choose</div>
-      <div class="noaudio">Audio coming soon</div>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeAF.html">Open activity</a></li>
-    <li><div class="row"><span class="name">Activity 5: Letter names G to L</span><span class="len"></span></div>
-      <div class="tag">Audio: Letter names G to L · Listen and choose</div>
-      <div class="noaudio">Audio coming soon</div>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeGL.html">Open activity</a></li>
-    <li><div class="row"><span class="name">Activity 7: Letter names M to R</span><span class="len">0:47</span></div>
-      <div class="tag">Audio: Letter names M to R · Listen and choose</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudLttrNmeMR.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeMR.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudLttrNmeMR.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 9: Letter names S to Z</span><span class="len">0:42</span></div>
-      <div class="tag">Audio: Letter names S to Z · Listen and choose</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudLttrNmeSZ.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeSZ.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudLttrNmeSZ.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 13: Say the names of the letters</span><span class="len"></span></div>
-      <div class="tag">Audio: Say the names of the letters · Listen and repeat</div>
-      <div class="noaudio">Audio coming soon</div>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmes.html">Open activity</a></li>
-    <li><div class="row"><span class="name">Activity 14: Writing letters</span><span class="len">2:05</span></div>
-      <div class="tag">Audio: Mixed alphabet letters · Listen and write</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudMixAlphbt.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudMixAlphbt.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudMixAlphbt.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 30: Repeat the sound</span><span class="len">0:52</span></div>
-      <div class="tag">Audio: Vowel sounds · Listen and repeat</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudVwlSnd.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSnd.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudVwlSnd.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 31: Sound out the word</span><span class="len">1:38</span></div>
-      <div class="tag">Audio: Vowel sounds in words · Listen and repeat</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudVwlSndWrd.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSndWrd.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudVwlSndWrd.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 34: Repeat the consonant sounds</span><span class="len">3:26</span></div>
-      <div class="tag">Audio: Consonant sounds · Listen and repeat</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudCnsnants.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudCnsnants.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudCnsnants.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 35: Repeat the sound</span><span class="len"></span></div>
-      <div class="tag">Audio: Blended sounds · Listen and repeat</div>
-      <div class="noaudio">Audio coming soon</div>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudBlndSnd.html">Open activity</a></li>
-    <li><div class="row"><span class="name">Activity 36: Listen to sounds</span><span class="len"></span></div>
-      <div class="tag">Audio: Common sound combinations · Listen and repeat</div>
-      <div class="noaudio">Audio coming soon</div>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbos.html">Open activity</a></li>
-    <li><div class="row"><span class="name">Activity 37: Sound combinations</span><span class="len">1:22</span></div>
-      <div class="tag">Audio: Common sound combinations activity · Listen and choose</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudCmnSndCmbosActvty.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbosActvty.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudCmnSndCmbosActvty.mp3" download>Download audio</a></li>
-    <li><div class="row"><span class="name">Activity 41: Spoken and written sounds</span><span class="len">5:24</span></div>
-      <div class="tag">Audio: Spoken and written sounds · Listen and repeat</div>
-      <audio controls preload="none" src="audio/VU23489_TL_SW_Appx_AudSpknWrttnSnd.mp3"></audio>
-      <a class="open" href="activities/VU23489_TL_SW_Appx_TrnScptAudSpknWrttnSnd.html">Open activity</a><a class="dl" href="audio/VU23489_TL_SW_Appx_AudSpknWrttnSnd.mp3" download>Download audio</a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudAlphbt.html"><div class="row"><span class="name">Activity 2: The names of letters</span><span class="len">5:40</span></div>
+      <div class="tag">Listen and repeat · Audio: Letters of the alphabet</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeAF.html"><div class="row"><span class="name">Activity 3: Letter names A to F</span><span class="len"></span></div>
+      <div class="tag">Listen and choose · Audio: Letter names A to F · <em>audio coming soon</em></div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeGL.html"><div class="row"><span class="name">Activity 5: Letter names G to L</span><span class="len"></span></div>
+      <div class="tag">Listen and choose · Audio: Letter names G to L · <em>audio coming soon</em></div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeMR.html"><div class="row"><span class="name">Activity 7: Letter names M to R</span><span class="len">0:47</span></div>
+      <div class="tag">Listen and choose · Audio: Letter names M to R</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmeSZ.html"><div class="row"><span class="name">Activity 9: Letter names S to Z</span><span class="len">0:42</span></div>
+      <div class="tag">Listen and choose · Audio: Letter names S to Z</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudLttrNmes.html"><div class="row"><span class="name">Activity 13: Say the names of the letters</span><span class="len"></span></div>
+      <div class="tag">Listen and repeat · Audio: Say the names of the letters · <em>audio coming soon</em></div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudMixAlphbt.html"><div class="row"><span class="name">Activity 14: Writing letters</span><span class="len">2:05</span></div>
+      <div class="tag">Listen and write · Audio: Mixed alphabet letters</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSnd.html"><div class="row"><span class="name">Activity 30: Repeat the sound</span><span class="len">0:52</span></div>
+      <div class="tag">Listen and repeat · Audio: Vowel sounds</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudVwlSndWrd.html"><div class="row"><span class="name">Activity 31: Sound out the word</span><span class="len">1:38</span></div>
+      <div class="tag">Listen and repeat · Audio: Vowel sounds in words</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCnsnants.html"><div class="row"><span class="name">Activity 34: Repeat the consonant sounds</span><span class="len">3:26</span></div>
+      <div class="tag">Listen and repeat · Audio: Consonant sounds</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudBlndSnd.html"><div class="row"><span class="name">Activity 35: Repeat the sound</span><span class="len"></span></div>
+      <div class="tag">Listen and repeat · Audio: Blended sounds · <em>audio coming soon</em></div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbos.html"><div class="row"><span class="name">Activity 36: Listen to sounds</span><span class="len"></span></div>
+      <div class="tag">Listen and repeat · Audio: Common sound combinations · <em>audio coming soon</em></div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudCmnSndCmbosActvty.html"><div class="row"><span class="name">Activity 37: Sound combinations</span><span class="len">1:22</span></div>
+      <div class="tag">Listen and choose · Audio: Common sound combinations activity</div></a></li>
+    <li><a class="act" href="activities/VU23489_TL_SW_Appx_TrnScptAudSpknWrttnSnd.html"><div class="row"><span class="name">Activity 41: Spoken and written sounds</span><span class="len">5:24</span></div>
+      <div class="tag">Listen and repeat · Audio: Spoken and written sounds</div></a></li>
   </ol>
 </main>
 </body>
