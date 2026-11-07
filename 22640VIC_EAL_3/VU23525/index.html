@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VU23525 Activities</title>
+<style>
+  :root { --bg:#f7f7f4; --card:#fff; --ink:#1f2328; --muted:#5b636b; --line:#e3e3dc; --accent:#1d6f5f; --accent-soft:#dff1ec; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16181b; --card:#1f2226; --ink:#e8e8e3; --muted:#a3a9ae; --line:#30343a; --accent:#5fc2a8; --accent-soft:#1d3a33; } }
+  * { box-sizing:border-box; }
+  html, body { height:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; display:flex; flex-direction:column; }
+  header { display:flex; align-items:center; gap:12px; padding:10px 16px; border-bottom:1px solid var(--line); background:var(--card); }
+  header a { color:var(--accent); text-decoration:none; font-size:.9rem; }
+  header h1 { font-size:1.1rem; margin:0; }
+  .wrap { flex:1; display:flex; min-height:0; }
+  nav { width:300px; flex-shrink:0; overflow-y:auto; border-right:1px solid var(--line); background:var(--card); }
+  nav ul { list-style:none; margin:0; padding:8px; }
+  nav button { width:100%; display:flex; gap:10px; align-items:flex-start; text-align:left; font:inherit; color:var(--ink); background:none; border:0; border-radius:10px; padding:9px 10px; cursor:pointer; }
+  nav button:hover { background:var(--bg); }
+  nav button.on { background:var(--accent-soft); }
+  nav .n { flex-shrink:0; min-width:30px; height:30px; border-radius:8px; background:var(--bg); border:1px solid var(--line); display:grid; place-items:center; font-weight:700; font-size:.9rem; }
+  nav button.on .n { background:var(--accent); border-color:var(--accent); color:#fff; }
+  nav .t { font-weight:600; }
+  nav small { display:block; font-weight:400; color:var(--muted); font-size:.8rem; }
+  .stage { flex:1; display:flex; flex-direction:column; min-width:0; }
+  .bar { display:flex; gap:8px; align-items:center; padding:8px 16px; border-bottom:1px solid var(--line); }
+  .bar select { display:none; flex:1; min-width:0; font:inherit; padding:8px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); }
+  .bar .spacer { flex:1; }
+  .bar button { font:inherit; padding:8px 14px; border-radius:10px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+  .bar button:disabled { opacity:.4; cursor:default; }
+  iframe { flex:1; width:100%; border:0; background:var(--bg); }
+  @media (max-width: 760px) {
+    nav { display:none; }
+    .bar select { display:block; }
+    .bar .spacer, .bar .lbl { display:none; }
+  }
+  header a { white-space:nowrap; }
+  @media (max-width: 760px) { header h1 { font-size:.95rem; } }
+</style>
+</head>
+<body>
+<header><a href="../">← Course</a><h1>VU23525 – Give and respond to straightforward information</h1></header>
+<div class="wrap">
+  <nav aria-label="Activities">
+    <ul>
+      <li><button data-i="0"><span class="n">4</span><span class="t">Listening to a presentation<small>Clean Up Australia presentation · 2:58</small></span></button></li>
+      <li><button data-i="1"><span class="n">5</span><span class="t">Listening to Abdul<small>Clean Up Australia presentation · 2:58</small></span></button></li>
+      <li><button data-i="2"><span class="n">7</span><span class="t">Understanding main ideas<small>Clean Up Australia presentation · 2:58</small></span></button></li>
+      <li><button data-i="3"><span class="n">11</span><span class="t">Healthy lifestyles<small>Radio Interview: Healthy Lifestyles · 2:27</small></span></button></li>
+      <li><button data-i="4"><span class="n">12</span><span class="t">Food preparation<small>Food Preparation · 0:56</small></span></button></li>
+      <li><button data-i="5"><span class="n">13</span><span class="t">Listen for details<small>Radio Interview: Healthy Lifestyles · 2:27</small></span></button></li>
+      <li><button data-i="6"><span class="n">14</span><span class="t">Listening for intonation<small>Radio Interview: Healthy Lifestyles · 2:27</small></span></button></li>
+      <li><button data-i="7"><span class="n">15</span><span class="t">Listening for attitude and tone<small>Radio Interview: Healthy Lifestyles · 2:27</small></span></button></li>
+      <li><button data-i="8"><span class="n">28</span><span class="t">Nature or nurture?<small>Nature or nurture · 2:41</small></span></button></li>
+      <li><button data-i="9"><span class="n">29</span><span class="t">Listen to the discussion<small>Nature or nurture · 2:41</small></span></button></li>
+      <li><button data-i="10"><span class="n">36</span><span class="t">Job rankings<small>Discussion on healthy living · 5:58</small></span></button></li>
+      <li><button data-i="11"><span class="n">39</span><span class="t">Understanding cohesive devices<small>Discussion on healthy living · 5:58</small></span></button></li>
+      <li><button data-i="12"><span class="n">40</span><span class="t">Applying reference cohesive devices<small>Discussion on healthy living · 5:58</small></span></button></li>
+    </ul>
+  </nav>
+  <section class="stage">
+    <div class="bar">
+      <select aria-label="Choose an activity">
+      <option value="0">Activity 4: Listening to a presentation</option>
+      <option value="1">Activity 5: Listening to Abdul</option>
+      <option value="2">Activity 7: Understanding main ideas</option>
+      <option value="3">Activity 11: Healthy lifestyles</option>
+      <option value="4">Activity 12: Food preparation</option>
+      <option value="5">Activity 13: Listen for details</option>
+      <option value="6">Activity 14: Listening for intonation</option>
+      <option value="7">Activity 15: Listening for attitude and tone</option>
+      <option value="8">Activity 28: Nature or nurture?</option>
+      <option value="9">Activity 29: Listen to the discussion</option>
+      <option value="10">Activity 36: Job rankings</option>
+      <option value="11">Activity 39: Understanding cohesive devices</option>
+      <option value="12">Activity 40: Applying reference cohesive devices</option>
+      </select>
+      <span class="spacer"></span>
+      <button id="prev" aria-label="Previous activity">←<span class="lbl"> Previous</span></button>
+      <button id="next" aria-label="Next activity"><span class="lbl">Next </span>→</button>
+    </div>
+    <iframe title="Activity" src="activities/activity-4.html"></iframe>
+  </section>
+</div>
+<script>
+  var D = [{"n": 4, "page": "activities/activity-4.html"}, {"n": 5, "page": "activities/activity-5.html"}, {"n": 7, "page": "activities/activity-7.html"}, {"n": 11, "page": "activities/activity-11.html"}, {"n": 12, "page": "activities/activity-12.html"}, {"n": 13, "page": "activities/activity-13.html"}, {"n": 14, "page": "activities/activity-14.html"}, {"n": 15, "page": "activities/activity-15.html"}, {"n": 28, "page": "activities/activity-28.html"}, {"n": 29, "page": "activities/activity-29.html"}, {"n": 36, "page": "activities/activity-36.html"}, {"n": 39, "page": "activities/activity-39.html"}, {"n": 40, "page": "activities/activity-40.html"}];
+  var frame = document.querySelector('iframe'), sel = document.querySelector('select'),
+      btns = document.querySelectorAll('nav button'), prev = document.getElementById('prev'), next = document.getElementById('next'), cur = -1;
+  function show(i, push) {
+    if (i < 0 || i >= D.length) return;
+    if (i !== cur) frame.src = D[i].page;
+    cur = i;
+    btns.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    sel.value = String(i); prev.disabled = i === 0; next.disabled = i === D.length - 1;
+    if (push) history.replaceState(null, '', '#activity-' + D[i].n);
+    btns[i].scrollIntoView({ block: 'nearest' });
+  }
+  btns.forEach(function (b, k) { b.onclick = function () { show(k, true); }; });
+  sel.onchange = function () { show(+sel.value, true); };
+  prev.onclick = function () { show(cur - 1, true); };
+  next.onclick = function () { show(cur + 1, true); };
+  var m = location.hash.match(/activity-(\d+)/), start = 0;
+  if (m) D.forEach(function (d, k) { if (String(d.n) === m[1]) start = k; });
+  show(start, false);
+</script>
+</body>
+</html>
