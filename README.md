@@ -1,4 +1,4 @@
 # EAL Workbook Audios
 
 Audio for student unit workbooks, playable without a login.
-One folder per unit: `UNITCODE/index.html` (player page) and `UNITCODE/audio/*.mp3`.
+Course folder → unit folder: `COURSE/UNITCODE/index.html` (player page) and `COURSE/UNITCODE/audio/*.mp3`.
